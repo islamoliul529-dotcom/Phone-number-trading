@@ -1,0 +1,19 @@
+<button onclick="getLocation()">Share My Location</button>
+
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        alert(
+          "Latitude: " + pos.coords.latitude +
+          "\nLongitude: " + pos.coords.longitude
+        );
+      },
+      (err) => alert("Permission denied")
+    );
+  } else {
+    alert("Geolocation not supported");
+  }
+}
+</script>
